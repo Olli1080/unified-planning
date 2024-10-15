@@ -676,7 +676,9 @@ class TimeTriggeredPlanValidator(engines.engine.Engine, mixins.PlanValidatorMixi
                                 fc = ccc._content.payload.function
                                 notOkParams = list()
                                 for fan in fa:
-                                    notOkParams.append(state.get_value(fan))
+                                    notOkParams.append(
+                                        state.get_value(fan).constant_value()
+                                    )
                                 cif[fp(*notOkParams)] = fc(
                                     *notOkParams
                                 )  # does not use memoization
@@ -687,7 +689,9 @@ class TimeTriggeredPlanValidator(engines.engine.Engine, mixins.PlanValidatorMixi
                                 fc = lll._content.payload.function
                                 notOkParams = list()
                                 for fan in fa:
-                                    notOkParams.append(state.get_value(fan))
+                                    notOkParams.append(
+                                        state.get_value(fan).constant_value()
+                                    )
                                 cif[fp(*notOkParams)] = fc(
                                     *notOkParams
                                 )  # does not use memoization
@@ -697,7 +701,9 @@ class TimeTriggeredPlanValidator(engines.engine.Engine, mixins.PlanValidatorMixi
                                 fc = uuu._content.payload.function
                                 notOkParams = list()
                                 for fan in fa:
-                                    notOkParams.append(state.get_value(fan))
+                                    notOkParams.append(
+                                        state.get_value(fan).constant_value()
+                                    )
                                 cif[fp(*notOkParams)] = fc(
                                     *notOkParams
                                 )  # does not use memoization
